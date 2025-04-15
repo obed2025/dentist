@@ -1,0 +1,17 @@
+@mixin text-gradient($gradient) {
+  background-image: $gradient;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin border-gradient($gradient, $slice) {
+  border: 10px solid transparent;
+  border-image: $gradient $slice;
+}
+
+@mixin limited-lines($limit) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $limit;
+  overflow: hidden;
+}

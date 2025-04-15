@@ -1,0 +1,51 @@
+@use './hero' as h;
+@use '../utils/' as u;
+
+.register {
+  @include h.hero();
+
+  span {
+    color: var(--color-s);
+    font-weight: 500;
+  }
+
+  padding: u.rem(88);
+
+  &__item:first-child {
+    gap: 0;
+  }
+
+  .btn {
+    width: fit-content;
+  }
+
+  ul {
+    padding: 0;
+    margin-top: 0;
+
+    li {
+      margin-block: 0.75rem;
+      list-style: none;
+      background-image: url('/Li.svg');
+      background-repeat: no-repeat;
+      background-position: 0 5px;
+      background-size: 20px;
+      padding-left: 30px;
+      line-height: 30px;
+    }
+  }
+
+  &__item:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img.not-doctor-2 {
+      transform: translateX(30%) translateY(-40%);
+    }
+
+    img.not-doctor-3 {
+      transform: translateX(50%) translateY(180%);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use '../utils/' as u;
+
+.header {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+      gap: u.rem(5);
+
+      img {
+        width: 30px;
+        aspect-ratio: 1;
+      }
+
+      strong {
+        color: var(--color-p1);
+        font-size: u.rem(24);
+      }
+    }
+  }
+}

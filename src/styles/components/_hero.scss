@@ -1,0 +1,57 @@
+@use '../utils/' as u;
+
+@mixin not-doctor($width, $x, $y) {
+  width: $width;
+  transform: translateX($x) translateY($y);
+}
+
+@mixin hero() {
+  background-image: var(--color-gradient);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: white;
+  padding: u.rem(30) u.rem(88);
+  border-radius: 50px;
+
+  &__item:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    div {
+      display: inherit;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__item:last-child {
+    position: relative;
+    z-index: 1;
+
+    img.not-doctor {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+
+      &-1 {
+        @include not-doctor(282px, -45%, 15%);
+      }
+
+      &-2 {
+        @include not-doctor(153px, -20%, 20%);
+      }
+
+      &-3 {
+        @include not-doctor(153px, 35%, 115%);
+      }
+    }
+  }
+}
+
+.hero {
+  @include hero();
+}

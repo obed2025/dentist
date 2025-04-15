@@ -1,0 +1,57 @@
+@use '../utils/' as u;
+
+.services {
+  & > span {
+    display: block;
+    color: var(--color-s);
+  }
+
+  h1 {
+    color: var(--color-p1);
+  }
+
+  p {
+    width: 75%;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+  }
+
+  h1,
+  p,
+  span {
+    text-align: center;
+  }
+
+  &__image-and-cards {
+    height: var(--height-from-js);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 40px;
+    gap: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
+    color: var(--color-p1);
+    padding: 1rem;
+    border-radius: 20px;
+    height: fit-content;
+
+    h2 {
+      @include u.limited-lines(1);
+    }
+
+    p {
+      @include u.limited-lines(3);
+    }
+  }
+}

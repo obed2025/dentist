@@ -1,0 +1,36 @@
+@mixin what-we-do($rtl: false) {
+  $justify-content: flex-end;
+
+  @if $rtl == true {
+    $justify-content: flex-start;
+  }
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__item {
+    flex-basis: 50%;
+
+    span {
+      color: var(--color-s);
+    }
+
+    h1 {
+      color: var(--color-p1);
+    }
+
+    &:has(img) {
+      display: flex;
+      justify-content: $justify-content;
+
+      img {
+        width: 75%;
+      }
+    }
+  }
+}
+
+.what-we-do {
+  @include what-we-do();
+}

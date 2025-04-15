@@ -1,0 +1,5 @@
+@use './what-we-do' as w;
+
+.why-we {
+  @include w.what-we-do(true);
+}

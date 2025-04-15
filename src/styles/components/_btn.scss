@@ -1,0 +1,20 @@
+.btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: var(--color-s);
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &--outline {
+    color: var(--color-s);
+    background-color: transparent;
+    border: 2px solid var(--color-s);
+
+    &-blue {
+      color: var(--color-p1);
+      border-color: var(--color-p1);
+    }
+  }
+}
